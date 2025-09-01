@@ -1,0 +1,33 @@
+<div data-controller="modal" class="kinesis-modal">
+  <button data-action="click->modal#open" class="btn-open">
+    <%= local_assigns[:trigger_text] || "Abrir Modal" %>
+  </button>
+  
+  <div data-modal-target="content" class="hidden fixed inset-0 bg-gray-800/50 flex items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-full mx-4">
+      <% if local_assigns[:title] %>
+        <h2 class="text-xl font-bold mb-4"><%= title %></h2>
+      <% end %>
+      
+      <div class="mb-4">
+        <% if local_assigns[:body] %>
+          <%= body %>
+        <% else %>
+          <%= yield if block_given? %>
+        <% end %>
+      </div>
+      
+      <div class="flex justify-end space-x-2">
+        <button data-action="click->modal#close" class="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition-colors">
+          <%= local_assigns[:close_text] || "Fechar" %>
+        </button>
+        
+        <% if local_assigns[:confirm_action] %>
+          <button data-action="click->modal#confirm" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors">
+            <%= local_assigns[:confirm_text] || "Confirmar" %>
+          </button>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

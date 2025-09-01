@@ -1,5 +1,7 @@
 # KinesisUi
 
+![](https://github.com/ViniciusLisboa07/kinesis-ui/blob/073d14ec644be2e61802ea2e8c37ca262b10f7a8/Kinesis%20UI.png)
+
 Uma gem Ruby on Rails para criação rápida de componentes de UI modernos com Tailwind CSS e Stimulus.
 
 KinesisUi
